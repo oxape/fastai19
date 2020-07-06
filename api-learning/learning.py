@@ -13,6 +13,6 @@ if __name__ == '__main__':
             .transform(tfms)
             .databunch(bs=16, num_workers=0))
     data.show_batch(3, figsize=(6, 6), hide_axis=False)
-    learner = cnn_learner(data, models.resnet18, metrics=error_rate)
+    learner = cnn_learner(data, models.vgg16_bn, metrics=error_rate)
     learner.lr_find()
     learner.recorder.plot()
