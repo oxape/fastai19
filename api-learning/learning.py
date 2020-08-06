@@ -187,8 +187,8 @@ if __name__ == '__main__':
 
     learner.lr_find()
 
-    datasets = datasets.ImageFolder(p)
-    item = next(iter(datasets))
+    data = datasets.ImageFolder(p)
+    item = next(iter(data))
 
     tfms = get_transforms(do_flip=False)
     data = (ImageList.from_folder(p)
